@@ -26,6 +26,28 @@ const User = db.define('user', {
   },
   googleId: {
     type: Sequelize.STRING
+  },
+  type: {
+    type: Sequelize.ENUM(['individual', 'bulk', 'commercial', 'industrial']),
+    allowNull: false
+  },
+  phone: {
+    type: Sequelize.STRING
+  },
+  street: {
+    type: Sequelize.STRING
+  },
+  apt: {
+    type: Sequelize.STRING
+  },
+  zip: {
+    type: Sequelize.STRING
+  },
+  city: {
+    type: Sequelize.STRING
+  },
+  state: {
+    type: Sequelize.STRING
   }
 })
 
