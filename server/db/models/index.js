@@ -8,16 +8,12 @@ const Collection = require('./collection')
  *
  *    BlogPost.belongsTo(User)
  */
-User.hasMany(Collection)
-Collection.belongsTo(User)
-
-Collection.hasMany(Bin)
-Bin.belongsTo(Collection)
-
-Bin.hasMany(Pickup)
-Pickup.belongsTo(Bin)
+User.hasMany(Bin)
+Bin.belongsTo(User)
 
 User.hasMany(Pickup)
+Pickup.belongsTo(User)
+
 /**
  * We'll export all of our models here, so that any time a module needs a model,
  * we can just require it from 'db/models'

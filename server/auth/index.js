@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const User = require('../db/models/user')
+const Bin = require('../db/models/bin')
+const Pickup = require('../db/models/pickup')
 module.exports = router
 
 router.post('/login', async (req, res, next) => {
@@ -38,8 +40,15 @@ router.post('/logout', (req, res) => {
   res.redirect('/')
 })
 
-router.get('/me', (req, res) => {
-  res.json(req.user)
+router.get('/me', async (req, res) => {
+  const user = await User.findOne({
+    where: {
+      id: req.user.id
+    },
+    include: [{model: Pickup}, {model: Bin}]
+  })
+  console.log('user vs req.user, user', user, 'req.user', req.user)
+  res.json(user)
 })
 
 router.use('/google', require('./google'))

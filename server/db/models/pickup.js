@@ -10,7 +10,7 @@ const Pickup = db.define('pickup', {
     type: Sequelize.DATE,
     allowNull: false
   },
-  pickedup: {
+  pickedUp: {
     type: Sequelize.BOOLEAN,
     defaultValue: false
   },

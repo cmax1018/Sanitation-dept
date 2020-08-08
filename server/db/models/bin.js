@@ -4,16 +4,16 @@ const db = require('../db')
 const Bin = db.define('bin', {
   type: {
     type: Sequelize.ENUM([
-      'compost',
-      'landfill',
-      'wood',
-      'metal',
-      'paper',
-      'plastic_wrap',
-      'plastic_bottles',
-      'glass',
-      'aluminum',
-      'e-waste'
+      'Compost',
+      'Landfill',
+      'Wood',
+      'Metal',
+      'Paper/Cardboard',
+      'Plastic Wrap',
+      'Plastic Bottles/Containers',
+      'Glass Bottles/Containers',
+      'Aluminum Cans/Containers',
+      'E-waste'
     ]),
     allowNull: false
   },

@@ -1,4 +1,4 @@
-,bin_type,customer_id,lbs,pickup_date
+id,bin_type,customer_id,lbs,pickup_date
 0,Wood,NRWMDAJURW,28.57896125208377,2020-07-04
 1,Plastic Wrap,GGDYAKXSTC,9.584661159042419,2020-07-06
 2,Metal,CDKURGWJJO,29.17610210818691,2020-07-05
