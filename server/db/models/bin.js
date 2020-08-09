@@ -23,6 +23,10 @@ const Bin = db.define('bin', {
   period: {
     type: Sequelize.INTEGER,
     defaultValue: null
+  },
+  collectionId: {
+    type: Sequelize.INTEGER,
+    defaultValue: 1
   }
 })
 

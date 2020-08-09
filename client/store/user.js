@@ -7,6 +7,9 @@ import history from '../history'
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
 
+const TOGGLE_NOTIFICATIONS = 'TOGGLE_NOTIFICATIONS'
+const TOGGLE_REMINDERS = 'TOGGLE_REMINDERS'
+
 /**
  * INITIAL STATE
  */
@@ -17,10 +20,28 @@ const defaultUser = {}
  */
 const getUser = user => ({type: GET_USER, user})
 const removeUser = () => ({type: REMOVE_USER})
-
+const toggledNotifications = () => ({type: TOGGLE_NOTIFICATIONS})
+const toggledReminders = () => ({type: TOGGLE_REMINDERS})
 /**
  * THUNK CREATORS
  */
+export const toggleNotifications = () => async dispatch => {
+  try {
+    await axios.put('/api/users/me/toggle', {toggle: 'notifications'})
+    dispatch(toggledNotifications())
+  } catch (e) {
+    console.err(e)
+  }
+}
+export const toggleReminders = () => async dispatch => {
+  try {
+    await axios.put('/api/users/me/toggle', {toggle: 'reminders'})
+    dispatch(toggledReminders())
+  } catch (e) {
+    console.err(e)
+  }
+}
+
 export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
@@ -67,6 +88,10 @@ export default function(state = defaultUser, action) {
   switch (action.type) {
     case GET_USER:
       return action.user
+    case TOGGLE_NOTIFICATIONS:
+      return {...state, notifications: !state.notifications}
+    case TOGGLE_REMINDERS:
+      return {...state, reminders: !state.reminders}
     case REMOVE_USER:
       return defaultUser
     default:

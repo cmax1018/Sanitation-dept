@@ -28,7 +28,8 @@ async function seed() {
       date: pickup.pickup_date,
       userId: user[0].id,
       pickedUp: true,
-      binId: bin.id
+      binId: bin.id,
+      collectionId: Math.floor(Math.random() * 4)
     })
 
     await pick.save()

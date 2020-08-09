@@ -1,11 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import BinsView from './binsView'
-const Bins = () => {
+const Bins = props => {
   return (
     <div>
-      <h1>This is the bins page</h1>
-      <BinsView bins={[]} />
+      <BinsView bins={props.user.bins} pickups={props.user.pickups} />
     </div>
   )
 }

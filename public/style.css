@@ -33,3 +33,26 @@ form div {
   max-width: 50%;
   min-width: 50%;
 }
+a,
+button > span {
+  color: #f7f7f7;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-form-container h2 {
+  text-align: center;
+}
+.bin-request-card {
+  padding: 25px;
+  width: 75%;
+  min-height: 350px;
+  border-radius: 12px;
+}
+
+.bin-request-card span {
+  background: lightblue;
+  visibility: visible;
+}
