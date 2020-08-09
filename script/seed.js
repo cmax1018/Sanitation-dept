@@ -20,18 +20,19 @@ async function seed() {
         password: 'password'
       }
     })
+    const bin = await Bin.build({type: pickup.bin_type, userId: user[0].id})
+    await bin.save()
     const pick = await Pickup.build({
       id: pickup.id,
       lbs: pickup.lbs,
       date: pickup.pickup_date,
       userId: user[0].id,
-      pickedUp: true
+      pickedUp: true,
+      binId: bin.id
     })
 
     await pick.save()
 
-    const bin = await Bin.build({type: pickup.bin_type, userId: user[0].id})
-    await bin.save()
     return pick
   })
   const handled = await Promise.all(promises)

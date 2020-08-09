@@ -13,6 +13,8 @@ Bin.belongsTo(User)
 
 User.hasMany(Pickup)
 Pickup.belongsTo(User)
+Bin.hasMany(Pickup)
+Pickup.belongsTo(Bin)
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
