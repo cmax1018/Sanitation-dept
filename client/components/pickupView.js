@@ -72,7 +72,6 @@ const legendOps = {
 const getPickupBinsPieData = (pickups, bins) => {
   const data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   //preserves and matches the order from label to color
-  console.log('getting data...')
   const lookup = convertBinsToLookup(bins)
   pickups.forEach(pickup => {
     const type = lookup[pickup.binId]
@@ -83,7 +82,6 @@ const getPickupBinsPieData = (pickups, bins) => {
 const getPickupBinsPieData2 = (pickups, bins) => {
   const data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   //preserves and matches the order from label to color
-  console.log('getting data...')
   const lookup = convertBinsToLookup(bins)
   pickups.forEach(pickup => {
     const type = lookup[pickup.binId]
