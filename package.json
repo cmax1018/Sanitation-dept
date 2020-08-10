@@ -1,7 +1,7 @@
 {
   "name": "sanitation",
   "version": "2.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "A Department of Sanitation Clone",
   "engines": {
     "node": "~12.11.1"
   },
@@ -38,7 +38,7 @@
       "git add"
     ]
   },
-  "author": "Fullstack Academy of Code",
+  "author": "Max Van Buskirk",
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
