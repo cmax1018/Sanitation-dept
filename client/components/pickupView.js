@@ -151,7 +151,6 @@ const PickupView = ({pickups, bins}) => {
       <div className="chart-container">
         <div className="chart">
           <h1>Lbs per Bin Type</h1>
-          {/* <Pie data={this.pieData2} legend={legendOps} ref={this.chart1Ref}/> */}
           <Pie data={pieData1} legend={legendOps} />
         </div>
         <div className="chart">
