@@ -26,6 +26,7 @@ router.post('/login', async (req, res, next) => {
 
 router.post('/signup', async (req, res, next) => {
   try {
+    console.log('sign up')
     const user = await User.create(
       {...req.body, id: req.body.email, bins: [], pickups: []},
       {include: [{model: Pickup}, {model: Bin}]}
