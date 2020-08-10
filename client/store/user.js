@@ -13,7 +13,10 @@ const TOGGLE_REMINDERS = 'TOGGLE_REMINDERS'
 /**
  * INITIAL STATE
  */
-const defaultUser = {}
+const defaultUser = {
+  pickups: [],
+  bins: []
+}
 
 /**
  * ACTION CREATORS
